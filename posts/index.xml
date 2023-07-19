@@ -18,5 +18,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Test</title>
+      <link>https://motrink.github.io/blog/test/</link>
+      <pubDate>Wed, 19 Jul 2023 14:19:44 +0900</pubDate>
+      <author>ultraraptor@naver.com (김동훈)</author>
+      <guid>https://motrink.github.io/blog/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://motrink.github.io/blog/my-first-post/</link>
+      <pubDate>Wed, 19 Jul 2023 13:47:20 +0900</pubDate>
+      <author>ultraraptor@naver.com (김동훈)</author>
+      <guid>https://motrink.github.io/blog/my-first-post/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
