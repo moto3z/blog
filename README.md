@@ -1,1 +1,1 @@
-# blog.io
+# craftsmanship.io
