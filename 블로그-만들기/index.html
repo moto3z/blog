@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+<link rel="stylesheet" href="https://motrink.github.io/blog/scss/main.min.css" />
+  
+<meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+
+<title>블로그 만들기</title>
+
+
+<meta name="author" content="">
+
+<meta name="description" content="장잉정신 엔지니어링">
+<link rel="canonical" href="https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="블로그 만들기">
+<meta property="og:description" content="주제의식 Link to this heading 소제목1 Link to this heading 소제목2 Link to this heading 참고링크 Link to this heading Hugo 페이지 만들기 : https://velog.io/@mellonggo/Github-페이지-블로그-만들기-with-Hugo GA 적용 : SEO 적용 : https://joungsik.github.io/post/2021_10_25/ ">
+<meta property="og:url" content="https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+<meta property="article:published_time" content="2023-07-19T17:32:30+09:00">
+  <meta property="article:modified_time" content="2023-07-19T17:32:30+09:00">
+  
+
+
+
+
+
+
+
+<meta name="twitter:title" content="블로그 만들기">
+<meta name="twitter:description" content="주제의식 Link to this heading 소제목1 Link to this heading 소제목2 Link to this heading 참고링크 Link to this heading Hugo 페이지 만들기 : https://velog.io/@mellonggo/Github-페이지-블로그-만들기-with-Hugo GA 적용 : SEO 적용 : https://joungsik.github.io/post/2021_10_25/ ">
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://motrink.github.io/#/schema/person/1",
+      "name":  null ,
+      "url": "https://motrink.github.io/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://motrink.github.io/#/schema/image/1",
+        "url": "https://motrink.github.io/\u003cnil\u003e",
+        "width": null ,
+        "height": null ,
+        "caption":  null 
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motrink.github.io/#/schema/website/1",
+      "url": "https://motrink.github.io/",
+      "name": "tech blog",
+      "description": "장잉정신 엔지니어링",
+      "publisher": {
+        "@id": "https://motrink.github.io/#/schema/person/1"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/",
+      "url": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/",
+      "name": "블로그 만들기",
+      "description": "장잉정신 엔지니어링",
+      "isPartOf": {
+        "@id": "https://motrink.github.io/#/schema/website/1"
+      },
+      "about": {
+        "@id": "https://motrink.github.io/#/schema/person/1"
+      },
+      "datePublished": "2023-07-19T17:32:30+09:00",
+      "dateModified": "2023-07-19T17:32:30+09:00",
+      "breadcrumb": {
+        "@id": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/#/schema/image/2"
+      },
+      "inLanguage":  null ,
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://motrink.github.io/blog/",
+          "url": "https://motrink.github.io/blog/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+          }
+        }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://motrink.github.io/#/schema/article/1",
+          "headline": "블로그 만들기",
+          "description": "",
+          "isPartOf": {
+            "@id": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+          },
+          "datePublished": "2023-07-19T17:32:30+09:00",
+          "dateModified": "2023-07-19T17:32:30+09:00",
+          "author": {
+            "@id": "https://motrink.github.io/#/schema/person/1"
+          },          
+          "publisher": {
+            "@id": "https://motrink.github.io/#/schema/person/1"
+          },
+          "image": {
+            "@id": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/#/schema/image/2"
+          }
+        }
+      ]
+    },{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/#/schema/image/2",
+          "url":  null ,
+          "contentUrl":  null ,
+          "caption": "블로그 만들기"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  
+
+</head><body>
+    <header class="container">
+  <nav class="main-nav" id="js-navbar">
+    <a class="logo" href="https://motrink.github.io/blog/">tech blog</a>
+    <ul class="menu" id="js-menu">
+      
+      
+      <li class="menu-item--align">
+        <div class="switch">
+          <input class="switch-input" type="checkbox" id="themeSwitch">
+          <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+          <div aria-hidden="true" class="switch-marker"></div>
+        </div>
+      </li>
+    </ul>
+    <span class="nav-toggle" id="js-navbar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+    </span>
+  </nav>
+</header><main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">블로그 만들기</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Jul 19, 2023&nbsp;&middot;&nbsp;1 min.</div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+</div>
+    <article class="markdown">
+        <h1 id="주제의식">주제의식<a href="#%ec%a3%bc%ec%a0%9c%ec%9d%98%ec%8b%9d">
+    <svg role="img" aria-labelledby="주제의식-IconTitle" fill="var(--color-primary)" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+      <title id="주제의식-IconTitle">Link to this heading</title>
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg>
+  </a>
+</h1><h2 id="소제목1">소제목1<a href="#%ec%86%8c%ec%a0%9c%eb%aa%a91">
+    <svg role="img" aria-labelledby="소제목1-IconTitle" fill="var(--color-primary)" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+      <title id="소제목1-IconTitle">Link to this heading</title>
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg>
+  </a>
+</h2><h2 id="소제목2">소제목2<a href="#%ec%86%8c%ec%a0%9c%eb%aa%a92">
+    <svg role="img" aria-labelledby="소제목2-IconTitle" fill="var(--color-primary)" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+      <title id="소제목2-IconTitle">Link to this heading</title>
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg>
+  </a>
+</h2><h2 id="참고링크">참고링크<a href="#%ec%b0%b8%ea%b3%a0%eb%a7%81%ed%81%ac">
+    <svg role="img" aria-labelledby="참고링크-IconTitle" fill="var(--color-primary)" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+      <title id="참고링크-IconTitle">Link to this heading</title>
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg>
+  </a>
+</h2><ul>
+<li>Hugo 페이지 만들기 : <a href="https://velog.io/@mellonggo/Github-" target="_blank" rel="noopener">https://velog.io/@mellonggo/Github-</a>페이지-블로그-만들기-with-Hugo</li>
+<li>GA 적용 :</li>
+<li>SEO 적용 : <a href="https://joungsik.github.io/post/2021_10_25/" target="_blank" rel="noopener">https://joungsik.github.io/post/2021_10_25/</a></li>
+</ul>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright">&copy; 2023 &middot; 
+      <a href="https://motrink.github.io/blog/">tech blog</a>
+      
+    </p>
+    
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+
+<script src="https://motrink.github.io/blog/main.min.js"></script>
+
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+</body>
+</html>
