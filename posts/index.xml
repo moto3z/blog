@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tech blog</title>
+    <title>Posts on tech blog</title>
     <link>https://motrink.github.io/blog/posts/</link>
     <description>Recent content in Posts on tech blog</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,7 +15,7 @@
       <pubDate>Wed, 19 Jul 2023 17:32:30 +0900</pubDate>
       <author>ultraraptor@naver.com (김동훈)</author>
       <guid>https://motrink.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
-      <description></description>
+      <description>주제의식 소제목1 소제목2 참고링크 Hugo 페이지 만들기 : https://velog.io/@mellonggo/Github-페이지-블로그-만들기-with-Hugo GA 적용 : SEO 적용 : https://joungsik.github.io/post/2021_10_25/ </description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Wed, 19 Jul 2023 14:19:44 +0900</pubDate>
       <author>ultraraptor@naver.com (김동훈)</author>
       <guid>https://motrink.github.io/blog/test/</guid>
-      <description></description>
+      <description>hello world</description>
     </item>
     
     <item>
@@ -33,7 +33,8 @@
       <pubDate>Wed, 19 Jul 2023 13:47:20 +0900</pubDate>
       <author>ultraraptor@naver.com (김동훈)</author>
       <guid>https://motrink.github.io/blog/my-first-post/</guid>
-      <description></description>
+      <description>Introduction This is bold text, and this is emphasized text.
+Visit the Hugo website!</description>
     </item>
     
   </channel>
