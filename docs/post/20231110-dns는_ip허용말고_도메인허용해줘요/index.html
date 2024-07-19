@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>20231110 DNS는_IP허용말고_도메인허용해줘요 - blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="https://moto6.github.io/blog/post/20231110-dns%EB%8A%94_ip%ED%97%88%EC%9A%A9%EB%A7%90%EA%B3%A0_%EB%8F%84%EB%A9%94%EC%9D%B8%ED%97%88%EC%9A%A9%ED%95%B4%EC%A4%98%EC%9A%94/">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <link rel="stylesheet" type="text/css" href="https://moto6.github.io/blog//css/combined-min.css">
+  
+
+</head>
+<body class="">
+
+<div class="site-wrap">
+  <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="https://moto6.github.io/blog/" class="site-title">blog</a>
+      <nav class="site-nav right">
+      <a href="https://moto6.github.io/blog//about/">About</a>
+<a href="https://moto6.github.io/blog//tags/">Tags</a>
+<a href="https://moto6.github.io/blog//contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</header>
+
+  <div class="post p2 p-responsive wrap" role="main">
+    <div class="measure">
+      <div class="post-header mb2">
+        <h1 class="py2">20231110 DNS는_IP허용말고_도메인허용해줘요</h1>
+        <span class="post-meta">Nov 10, 2023 </span><br>
+        
+      </div>
+
+      <article class="post-content">
+      <h1 id="dns-주소는-도메인-단위로-허용해야하는구나--를-배운-ssul">DNS 주소는 도메인 단위로 허용해야하는구나!  를 배운 SSUL</h1>
+<h2 id="발단">발단</h2>
+<ul>
+<li>돈이많고 보안이 빡센 굴지의 대기업 횽이 우리 서비스를 자기네 사업장에서 돌리보고 싶어 하셨었습니다.</li>
+<li>그래서 요구사항도 열심히 수용해서 개발두 하고, 이런저런 절차들을 통과할때쯤 문제가 생겼는데요</li>
+<li>&ldquo;프론트가 깨져요&rdquo; 라는 이슈가 생겼어요.</li>
+<li>왜 프론트가 깨지는지 확인을 해 보니까, 이 대기업횽네는 보안이 무지 빡세서 퍼블릭 망이긴 한데, 네트워크가 whitelist 정책이라서 허용된 IP 이외에 모든 네트웍 접근에 대해서 timeout error 를 날려주시는 차도남같은 차가운 보안정책이였던 것이였어요.</li>
+<li>처음에 우리 서비스 연결할때도 ip 를 허용해주고 nat 대역을 어디까지 쓰고 했던터라 아 이것도 등록하면 되는구나 하고 생각을 했었답니다</li>
+</ul>
+<p><img src="../img/20231110-dns-1.png" alt=""></p>
+<h2 id="트러블슈팅">트러블슈팅</h2>
+<ul>
+<li>그래서 크롬디버거창을 보니 외부 Saas 서비스로 가는 CDN이 막혀있었고, 동일한 외부 Saas 서비스에서 프론트에 사용되는 bootstrap, jquery CDN 이 막혀서 프론트가 깨지는 원인 이였습니다.</li>
+<li>처음에는 domain name 을 기준으로 whitelist 에 등록하려고 했지만, 이 굴지의 대기업형님 보안이 빡세서 domain 기준으로는 whitelist policy 에 등록이 안된다네요 ..ㅠ</li>
+<li>하는수없이 <code>nslookup</code> 명령어로 도메인 뒤에 있는 IP/VIP 를 한땀한땀 가져와 등록해주는수밖에 없었습니다.</li>
+</ul>
+<p><img src="../img/20231110-dns-2.png" alt=""></p>
+<h2 id="그런데-말입니다">그런데 말입니다</h2>
+<ul>
+<li>고객site 에서는 여전히 프론트가 깨지고 dns로의 접근이 허용되지 않는 문제가 있었습니다.</li>
+<li>무슨 문제인거지..? 정말 몰랐는데 정말 실력좋은 팀원분께서 원인을 알려줘서 문제를 해결할수 있었습니다</li>
+</ul>
+<p><img src="../img/20231110-dns-3.png" alt=""></p>
+<ul>
+<li>제가 인터넷을 제공받는 ISP, 그리고 개발 PC 에 설정된  local dns 주소에 따라서 CDN 의 접근 주소가 달라진다는 사실을 처음 알게 되었습니다.</li>
+<li>실제로 아래의 사이트에서는 ISP 와 DNS 회사들마다 CDN 도메인을 바라보는 IP 주소가 다르다는걸 알수 있었습니다</li>
+</ul>
+<pre tabindex="0"><code>https://checkdnskr.appspot.com/
+</code></pre><h2 id="프롤로그">프롤로그</h2>
+<ul>
+<li>
+<p>cdn 을 그냥 단순한 캐싱서버정도로 피상적으로 알고 있었는데, 조금 더 알게 된 느낌 입니다. 프로그래밍도 좋지만 네트워크 &amp; 인프라 공부도 틈틈히 해두면 좋을꺼같습니다.</p>
+</li>
+<li>
+<p>참고자료</p>
+<ul>
+<li><a href="https://tech.kakao.com/2014/05/29/anycast/">https://tech.kakao.com/2014/05/29/anycast/</a></li>
+<li><a href="https://www.cloudflare.com/ko-kr/application-services/products/dns/">https://www.cloudflare.com/ko-kr/application-services/products/dns/</a></li>
+<li><a href="https://www.cloudflare.com/ko-kr/learning/dns/what-is-anycast-dns/">https://www.cloudflare.com/ko-kr/learning/dns/what-is-anycast-dns/</a></li>
+</ul>
+</li>
+</ul>
+
+      </article>
+
+      
+
+      
+
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+      <div class="p2 wrap">
+        <div class="measure mt1 center">
+      <nav class="social-icons icons">
+<a class="fa fa-rss rss" href="/index.xml"></a>
+
+</nav>
+
+          <small>
+            Copyright &#169; 2017<br>
+            Powered by <a href="http://gohugo.io/" target="_blank">Hugo</a> &amp; <a href="https://github.com/azmelanar/hugo-theme-pixyll" target="_blank">Pixyll</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+
+</body>
+</html>
+

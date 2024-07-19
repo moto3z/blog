@@ -1,4 +1,23 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://moto6.github.io/blog/'
+title = 'blog'
+publishDir = "docs"
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+# languageCode = "ko-KR"
 theme = "pixyll"
+googleAnalytics = "UA-XXXXXXXX-X"
+paginate = 7
+
+[author]
+    name = '김동훈'
+    email = 'ultraraptor@naver.com'
+
+[params]
+    Subtitle = 'techlog'
+    description = 'techlog'
+    commentoEnable = true
+    AuthorName = '김동훈'
+    GitHubUser = 'moto6'
+    SidebarRecentLimit = 5
+
+[permalinks]
+  posts = '/:title/'

@@ -1,0 +1,149 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>blog on blog </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://moto6.github.io/blog/</link>
+    <language>en-us</language>
+    <author>김동훈</author>
+    
+    <updated>Sat, 29 Jun 2024 17:13:14 KST</updated>
+    
+    <item>
+      <title>20240629 HTTP 트래픽 유실 이슈해결하기</title>
+      <link>https://moto6.github.io/blog/post/20240629-%EC%A3%BC%EB%AC%B8-%EC%9C%A0%EC%8B%A4-%EC%9D%B4%EC%8A%88%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sat, 29 Jun 2024 17:13:14 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20240629-%EC%A3%BC%EB%AC%B8-%EC%9C%A0%EC%8B%A4-%EC%9D%B4%EC%8A%88%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/</guid>
+      <description>1 개요 혹시 택배완료 알람을 받고 설레는 마음으로 집에 도착했는데, 물건이 온데간데 없었던 경험이 있으신가요? 저는 졸업작품을 만들때 사용할 전자부품을 국제특송으로 시켰는데 내용물이 사라져 &amp;ldquo;아 이번학기 졸업은 물건너간건가? ㅠㅠ&amp;rdquo; 라는 생각이 들만큼 아찔했던 상황이 있었습니다. 다행이 물건은 이름이 비슷한 다른 근처 아파트단지로 배송되어서 무사히 물건도 찾고 졸업도 재때 했던 기억이 있습니다. 이렇게 배달중 내용물이 사라져서 찾지 못하는 상황을 만나게 되면 참 난감한데요. 특히 HTTP로 들어오는 트래픽이 유실되거나, 외부연동에서 트래픽이 유실되는 경우에는 서버측도 클라이언트 측도 난감한 상황이 발생합니다.</description>
+    </item>
+    
+    <item>
+      <title>20231231 2023연말결산개발회고록</title>
+      <link>https://moto6.github.io/blog/post/20231231-2023%EA%B0%9C%EB%B0%9C%ED%9A%8C%EA%B3%A0%EB%A1%9D/</link>
+      <pubDate>Sun, 31 Dec 2023 21:45:48 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20231231-2023%EA%B0%9C%EB%B0%9C%ED%9A%8C%EA%B3%A0%EB%A1%9D/</guid>
+      <description>2023년을 마무리하면서 연말결산 &amp;amp; 개발회고록 &amp;amp; 실수 모음집 들어가기전 주의사항 2023년동안 Java/Spring 백엔드 개발 하면서 생각한것들을 주관적으로 대충 작성해봤슴다 1 CDN 서비스를 ACL 처리할때는 IP 로 하는게 아니라 Domain 기반으로 하자 2 카프카는 Pub-Sub 구조가 필요할때 쓰자 3 예쁜쓰레기 코드 죄송합니다 4 Http 는 생각보다 아주많이 느릴수도 있다 5 논문만큼 긴 쿼리는&amp;hellip; 캡틴큐다 6 깃 커밋메시지 제대로 쓰자 7 이메일 길이 제한을 명시하자 8 HTTPS 에서 인증서 체크는 issue Date &amp;amp;&amp;amp; Expiration date 둘다 한다 9 버전업은 남들이 올려줄때까지 그냥 흐린눈 하자 (굳이.</description>
+    </item>
+    
+    <item>
+      <title>20231113 모니터 오디오출력 노이즈 화이트노이즈</title>
+      <link>https://moto6.github.io/blog/post/20231113-%EB%AA%A8%EB%8B%88%ED%84%B0-%EC%98%A4%EB%94%94%EC%98%A4%EC%B6%9C%EB%A0%A5-%EB%85%B8%EC%9D%B4%EC%A6%88-%ED%99%94%EC%9D%B4%ED%8A%B8%EB%85%B8%EC%9D%B4%EC%A6%88/</link>
+      <pubDate>Mon, 13 Nov 2023 21:50:39 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20231113-%EB%AA%A8%EB%8B%88%ED%84%B0-%EC%98%A4%EB%94%94%EC%98%A4%EC%B6%9C%EB%A0%A5-%EB%85%B8%EC%9D%B4%EC%A6%88-%ED%99%94%EC%9D%B4%ED%8A%B8%EB%85%B8%EC%9D%B4%EC%A6%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>20231111 Kotlin와일드카드임포트푸는법</title>
+      <link>https://moto6.github.io/blog/post/20231111-kotlin%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EC%9E%84%ED%8F%AC%ED%8A%B8%ED%91%B8%EB%8A%94%EB%B2%95/</link>
+      <pubDate>Sat, 11 Nov 2023 11:24:27 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20231111-kotlin%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EC%9E%84%ED%8F%AC%ED%8A%B8%ED%91%B8%EB%8A%94%EB%B2%95/</guid>
+      <description>와일드카드 임포트 (import *) 는 어쩌다 생겨나는가? JVM 계열 언어(자바, 코틀린) 을 쓰면 코드상에 의존하는 외부의 요소들은 import 로 명시를 해주게 됩니다 그래서 코딩을 하면서 import 문이 하나둘 늘어나다 보면 // 이렇게 하나씩 늘어나다가 import lotto.model.Game import lotto.model.Issuer import lotto.model.LottoWinners import lotto.model.Rank import lotto.model.Round // * 로 퉁쳐버립 import lotto.model.* 위 코드처럼 * (와일드카드 심볼) 로 임포트 된 코드들이 되게 되는데요 특별히 옵션을 변경한적 없다면 5개 이상부터는 * 로 치환하게 되는데요, 그 이유는 인텔리제이 내장 포메터의 디폴트 동작 옵션이라 그렇습니다.</description>
+    </item>
+    
+    <item>
+      <title>20231110 DNS는_IP허용말고_도메인허용해줘요</title>
+      <link>https://moto6.github.io/blog/post/20231110-dns%EB%8A%94_ip%ED%97%88%EC%9A%A9%EB%A7%90%EA%B3%A0_%EB%8F%84%EB%A9%94%EC%9D%B8%ED%97%88%EC%9A%A9%ED%95%B4%EC%A4%98%EC%9A%94/</link>
+      <pubDate>Fri, 10 Nov 2023 19:16:53 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20231110-dns%EB%8A%94_ip%ED%97%88%EC%9A%A9%EB%A7%90%EA%B3%A0_%EB%8F%84%EB%A9%94%EC%9D%B8%ED%97%88%EC%9A%A9%ED%95%B4%EC%A4%98%EC%9A%94/</guid>
+      <description>DNS 주소는 도메인 단위로 허용해야하는구나! 를 배운 SSUL 발단 돈이많고 보안이 빡센 굴지의 대기업 횽이 우리 서비스를 자기네 사업장에서 돌리보고 싶어 하셨었습니다. 그래서 요구사항도 열심히 수용해서 개발두 하고, 이런저런 절차들을 통과할때쯤 문제가 생겼는데요 &amp;ldquo;프론트가 깨져요&amp;rdquo; 라는 이슈가 생겼어요. 왜 프론트가 깨지는지 확인을 해 보니까, 이 대기업횽네는 보안이 무지 빡세서 퍼블릭 망이긴 한데, 네트워크가 whitelist 정책이라서 허용된 IP 이외에 모든 네트웍 접근에 대해서 timeout error 를 날려주시는 차도남같은 차가운 보안정책이였던 것이였어요. 처음에 우리 서비스 연결할때도 ip 를 허용해주고 nat 대역을 어디까지 쓰고 했던터라 아 이것도 등록하면 되는구나 하고 생각을 했었답니다 트러블슈팅 그래서 크롬디버거창을 보니 외부 Saas 서비스로 가는 CDN이 막혀있었고, 동일한 외부 Saas 서비스에서 프론트에 사용되는 bootstrap, jquery CDN 이 막혀서 프론트가 깨지는 원인 이였습니다.</description>
+    </item>
+    
+    <item>
+      <title>20231107 코틀린클린코드3주</title>
+      <link>https://moto6.github.io/blog/post/20231107-%EC%BD%94%ED%8B%80%EB%A6%B0%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C3%EC%A3%BC/</link>
+      <pubDate>Tue, 07 Nov 2023 19:40:03 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20231107-%EC%BD%94%ED%8B%80%EB%A6%B0%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C3%EC%A3%BC/</guid>
+      <description>TDD TDD 는 개발 방법론이자 철학, Development TDD 로 구현할 기능 찾기 -=&amp;ndash;
+시작하기 퍼블릭 클래스! 요구 사항 분석을 통한 기능 목록 작성 객체 설계를 통해 어느 부분부터 구현을 시작할 것인지 결정 기능 목록 구매할 Lotto의 매수 구하기 1000 -&amp;gt; 1 1500 -&amp;gt; 1 500 -&amp;gt; error 한장의 Lotto 생성 당첨 번호 생성 정상적인 당첨 번호 입력 유효하지 않은 당첨 번호 한 장의 Lotto에 대한 당첨 결과 구하기 n장의 Lotto에 대한 당첨 결과 구하기 Lotto 결과에 따른 수익률 구하기 &amp;hellip; TDD로 구현할 기능 찾기 구현 중간 부분을 자르는 연습을 해야 한다.</description>
+    </item>
+    
+    <item>
+      <title>20230907 컴구스터디71페이지</title>
+      <link>https://moto6.github.io/blog/post/20230907-%EC%BB%B4%EA%B5%AC%EC%8A%A4%ED%84%B0%EB%94%9471%ED%8E%98%EC%9D%B4%EC%A7%80/</link>
+      <pubDate>Thu, 14 Sep 2023 19:04:26 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20230907-%EC%BB%B4%EA%B5%AC%EC%8A%A4%ED%84%B0%EB%94%9471%ED%8E%98%EC%9D%B4%EC%A7%80/</guid>
+      <description>컴구스터디 71 페이지 손글씨로 정리해봤습니다 </description>
+    </item>
+    
+    <item>
+      <title>20230904 이펙티브테스팅 챕3</title>
+      <link>https://moto6.github.io/blog/post/20230904-%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%85%8C%EC%8A%A4%ED%8C%85-%EC%B1%953/</link>
+      <pubDate>Mon, 04 Sep 2023 18:17:35 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20230904-%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%85%8C%EC%8A%A4%ED%8C%85-%EC%B1%953/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>20230830 구름톤3주차수요일</title>
+      <link>https://moto6.github.io/blog/post/20230830-%EA%B5%AC%EB%A6%84%ED%86%A43%EC%A3%BC%EC%B0%A8%EC%88%98%EC%9A%94%EC%9D%BC/</link>
+      <pubDate>Wed, 30 Aug 2023 12:39:35 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20230830-%EA%B5%AC%EB%A6%84%ED%86%A43%EC%A3%BC%EC%B0%A8%EC%88%98%EC%9A%94%EC%9D%BC/</guid>
+      <description>구름톤 3주차 코테풀이 수요일 발전기 문제 발전기 문제는 전형적인 BFS 문제라고 생각했는데 왜냐하면&amp;hellip; 인접한 집은 전기가 통한다 &amp;raquo; 인접노드를 먼저 탐색해라 &amp;raquo; BFS 발전기의 최소한의 갯수를 구해라 &amp;raquo; BFS 의 EntryPoint 갯수 구하기 &amp;raquo; 삼성코테 기출 / 백준 등등의 문제들 중에서 섬의 갯수 구하기 유형 그런데 이제.. 조금 불평불만을 해보자면 글 읽기가 좀 힘든데 왜 그런고 하니 &amp;ldquo;빈땅&amp;rdquo; 에 발전기를 설치하는 경우 &amp;raquo; 2^(N*N) 시간복잡도 만큼의 극한의 완전탐색 문제 &amp;raquo; n=5 이면 2^25 만큼 시간복잡도 한계지점 &amp;ldquo;집&amp;rdquo; 에다가 발전기를 설치하는 경우 &amp;raquo; 단순 BFS 위 두 문장 사이가 뭔가 미묘하게 애매한 구석이 있어서 좀더 명시적으로 이야기되면 좋을꺼같습니다.</description>
+    </item>
+    
+    <item>
+      <title>20230829 이펙티브테스팅 챕터2 - 명세기반테스트</title>
+      <link>https://moto6.github.io/blog/post/20230829-%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%85%8C%EC%8A%A4%ED%8C%852%EC%A3%BC%EC%B0%A8/</link>
+      <pubDate>Tue, 29 Aug 2023 20:32:09 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20230829-%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%85%8C%EC%8A%A4%ED%8C%852%EC%A3%BC%EC%B0%A8/</guid>
+      <description>이펙티브 테스팅 챕터 2 Abstraction 요구사항 기반으로 테스트코드 만들면 아주좋음, 그게 명세기반테스트임 도메인이 강력하고 요구사항이 복잡할수록, 명세기반테스트로 검증하기 좋고 검증해야함 명세기반 테스트를 위한 7단계 접근법 버그는 경계를 좋아한다. 엣지케이스라고도 하는데, 이 엣지케이스를 찾는게 가장 중요하고 어려운 일 무엇을 테스트해야하는지 결정잘해 무엇은 테스트하면 안되는지(의미가 없는 쓸데없는 테스트인지) 결정 잘하기 인트로 소프트웨어에서 가장 중요한거 : 요구사항 충족 비지니스가 복잡하고 고도화될수록, 비지니스 요구사항을 잘 충족하는지 검사해야한다 (내생각) 도메인이 고도화될수록 &amp;raquo; 도메인 로직 위주로 테스트하기 쉽도록 단위테스트를 만들면 아주 좋겠죠?</description>
+    </item>
+    
+    <item>
+      <title>20230901 쿱스터디2주차</title>
+      <link>https://moto6.github.io/blog/post/20230901-%EC%BF%B1%EC%8A%A4%ED%84%B0%EB%94%942%EC%A3%BC%EC%B0%A8/</link>
+      <pubDate>Mon, 28 Aug 2023 20:55:38 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20230901-%EC%BF%B1%EC%8A%A4%ED%84%B0%EB%94%942%EC%A3%BC%EC%B0%A8/</guid>
+      <description>12. Docker-vs-ContainerD 쿠버네티스 rkt(로켓) 컨테이너디 도커 컨테이너디 (이하 컨디) 컨테이너디 CIL : ctr 도커링 비슷한 crt이 nerdctl / 범생이ctr 예시 docker = nerdctl docker run --name redis redis:alpine = nerdctl run --name redis redis:alpine docker run --name webserver -p 80:80 -d nginx = nerdctl run --name webserver -p 80:80 -d nginx crictl CLI for CRI 호환 컨테이너 런타임 검사하고 디버깅에 사용 컨디 커뮤니티를 위해 작성됨 디버깅툴임! 큐블렛이랑 잘어울림 예시 crictl pull busybox crictl imges crictl ps -a crictl pods &amp;lt;&amp;lt; pod 리스트 출력됨 요약 ctr : 안씀 nerdcrl : 쓸꺼임 dockerCLI 랑 비슷함 crictl : 디버깅용으로만 쓰는데, 쿱커뮤니티에서 만든거임 13.</description>
+    </item>
+    
+    <item>
+      <title>230828 쿱스터디1주차</title>
+      <link>https://moto6.github.io/blog/post/20230828-%EC%BF%B1%EC%8A%A4%ED%84%B0%EB%94%941%EC%A3%BC%EC%B0%A8/</link>
+      <pubDate>Mon, 28 Aug 2023 19:56:23 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20230828-%EC%BF%B1%EC%8A%A4%ED%84%B0%EB%94%941%EC%A3%BC%EC%B0%A8/</guid>
+      <description>학습요약 강의: https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/ 준비 범위: Introduction ~ Core Concepts - Core Concepts Section Introduction 내용 앞으로 배울내용 간단하게 설명해줌 상위 레벨에서 클러스터 아키텍처를 쿱 개념들 배울꺼임 pod, ReplicaSet, deploy, Service 강의가 알려주는 정보 자격증 자격증 사이트 : Certified Kubernetes Administrator: https://www.cncf.io/certification/cka/ 이외 Exam Curriculum (Topics): https://github.com/cncf/curriculum Candidate Handbook: https://www.cncf.io/certification/candidate-handbook Exam Tips: http://training.linuxfoundation.org/go//Important-Tips-CKA-CKAD code - 20KODE - 20프로 할인해줌 이외 https://github.com/mmumshad/kubernetes-the-hard-way 질문 답변 : https://github.com/kodekloudhub/certified-kubernetes-administrator-course </description>
+    </item>
+    
+    <item>
+      <title>20230827 구름톤2주차</title>
+      <link>https://moto6.github.io/blog/post/20230827-%EA%B5%AC%EB%A6%84%ED%86%A42%EC%A3%BC%EC%B0%A8/</link>
+      <pubDate>Sun, 27 Aug 2023 23:25:21 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20230827-%EA%B5%AC%EB%A6%84%ED%86%A42%EC%A3%BC%EC%B0%A8/</guid>
+      <description>2주차 문제풀이를 하면서 느낀점 몇가지 1) 코테언어를 Java &amp;gt; Kotlin 으로 변경했는데 너무 속시원하다 자바는 좀.. 장황한 측면이 있는거같다&amp;hellip; 콘솔출력이 메이져 언어 들 중에서는 꽤나 긴편이 아닐까?? system.out.println(&amp;#34;Hello world&amp;#34;) println(&amp;#34;Hello world&amp;#34;) 근데 이건 논쟁의 소지가 있는게, 자바도 static 임포트 하면 코틀린처럼 쓸수 있다. 근데 이건 바로 아래 나올 impor 구문에서.. 2) import 구문을 일일히 다 적어줘야한다 이거.. 스프링으로 웹개발하다보면 자바파일 상단 50줄은 import 문이다 인텔리제이도 기본값으로 import 문을 접어버린다. 이거는 뭐.</description>
+    </item>
+    
+    <item>
+      <title>20230823 구름톤2주차수요일</title>
+      <link>https://moto6.github.io/blog/post/20230823-%EA%B5%AC%EB%A6%84%ED%86%A42%EC%A3%BC%EC%B0%A8%EC%88%98%EC%9A%94%EC%9D%BC/</link>
+      <pubDate>Wed, 23 Aug 2023 22:16:09 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/20230823-%EA%B5%AC%EB%A6%84%ED%86%A42%EC%A3%BC%EC%B0%A8%EC%88%98%EC%9A%94%EC%9D%BC/</guid>
+      <description>구름톤 2주차 PS 2주차에서 가장 인상깊었던 문제는 백준에서의 1605문제 ( https://www.acmicpc.net/problem/1605 ) 랑 비슷한 유형의 문제였는데 유형이 비슷할뿐이지 핀트가 약간 달라 문제를 설명하면 아래와 같았습니다 1) 오리진 문자열 &amp;#34;abcd&amp;#34; 가 있습니다 2) 오리진 문자열을 3개의 구간으로 쪼개는 모든 경우의 수는 아래처럼 총 3가지 입니다 a/b/cd a/bc/d ab/c/d 3) 쪼갠 문자열을 중복을 제거하고 사전순으로 정렬하면 아래처럼 6개의 원소를 갖게 됩니다. a ab b bc cd c 4) 위 원소들의 인덱스를 구하는게 문제였습니다 문제를 읽고 나니 솔직히 처음에는 단순히 구현문제인줄 알았습니다.</description>
+    </item>
+    
+    <item>
+      <title>이펙티브테스트 챕터 1</title>
+      <link>https://moto6.github.io/blog/post/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%85%8C%EC%8A%A4%ED%8C%851%EC%B1%95%ED%84%B0/</link>
+      <pubDate>Tue, 22 Aug 2023 21:03:23 KST</pubDate>
+      <author>김동훈</author>
+      <guid>https://moto6.github.io/blog/post/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%85%8C%EC%8A%A4%ED%8C%851%EC%B1%95%ED%84%B0/</guid>
+      <description>이펙티브 스터디 챕터 1 내용 학습 목차 1.1 테스트를 하는 개발자와 하지 않는 개발자 2 1.2 개발자를 위한 효율적인 소프트웨어 테스트 14 __1.2.1 개발 과정에서의 효율적인 테스트 15 __1.2.2 반복 프로세스로서의 효율적 테스트 17 __1.2.3 개발에 먼저 집중하고 나서 테스트하기 17 __1.2.4 ‘제대로 된 설계’에 관한 미신 17 __1.2.5 테스트 비용 18 __1.2.6 효율적이면서 체계적이라는 것의 의미 18 __1.2.7 테스트 자동화의 역할 19 1.3 소프트웨어 테스트 원칙(테스트는 왜 이렇게 어려운가) 19 __1.</description>
+    </item>
+    
+  </channel>
+</rss>
+

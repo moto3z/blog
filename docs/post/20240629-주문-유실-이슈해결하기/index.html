@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>20240629 HTTP 트래픽 유실 이슈해결하기 - blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="https://moto6.github.io/blog/post/20240629-%EC%A3%BC%EB%AC%B8-%EC%9C%A0%EC%8B%A4-%EC%9D%B4%EC%8A%88%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <link rel="stylesheet" type="text/css" href="https://moto6.github.io/blog//css/combined-min.css">
+  
+
+</head>
+<body class="">
+
+<div class="site-wrap">
+  <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="https://moto6.github.io/blog/" class="site-title">blog</a>
+      <nav class="site-nav right">
+      <a href="https://moto6.github.io/blog//about/">About</a>
+<a href="https://moto6.github.io/blog//tags/">Tags</a>
+<a href="https://moto6.github.io/blog//contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</header>
+
+  <div class="post p2 p-responsive wrap" role="main">
+    <div class="measure">
+      <div class="post-header mb2">
+        <h1 class="py2">20240629 HTTP 트래픽 유실 이슈해결하기</h1>
+        <span class="post-meta">Jun 29, 2024 </span><br>
+        
+      </div>
+
+      <article class="post-content">
+      <h2 id="1-개요">1 개요</h2>
+<ul>
+<li>혹시 택배완료 알람을 받고 설레는 마음으로 집에 도착했는데, 물건이 온데간데 없었던 경험이 있으신가요? 저는 졸업작품을 만들때 사용할 전자부품을 국제특송으로 시켰는데 내용물이 사라져 &ldquo;아 이번학기 졸업은 물건너간건가? ㅠㅠ&rdquo; 라는 생각이 들만큼 아찔했던 상황이 있었습니다. 다행이 물건은 이름이 비슷한 다른 근처 아파트단지로 배송되어서 무사히 물건도 찾고 졸업도 재때 했던 기억이 있습니다. 이렇게 배달중 내용물이 사라져서 찾지 못하는 상황을 만나게 되면 참 난감한데요.</li>
+<li>특히 HTTP로 들어오는 트래픽이 유실되거나, 외부연동에서 트래픽이 유실되는 경우에는 서버측도 클라이언트 측도 난감한 상황이 발생합니다.</li>
+</ul>
+<pre tabindex="0"><code>우리는 분명히 줬는데 VS 우리는 받은게 없는데
+</code></pre><ul>
+<li>이 글에서는 HTTP 유실 문제의 원인을 간단히 살펴보고, 이를 해결한 경험과 제가 처했던 상황을 공유하고자 합니다.</li>
+</ul>
+<h2 id="2-문제-상황-정의">2 문제 상황 정의</h2>
+<ul>
+<li>문제가 발생할 당시를 간단하게 설명하면 아래와 같습니다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+-----------------------+               +-----------------------+
+</span></span><span style="display:flex;"><span>|                       |               |                       |
+</span></span><span style="display:flex;"><span>| A회사 레거시 시스템   |  -------&gt;     |   B 신규연동 시스템   |
+</span></span><span style="display:flex;"><span>|                       |   http        |                       |
+</span></span><span style="display:flex;"><span>+-----------------------+               +-----------------------+
+</span></span></code></pre></div><ul>
+<li>저는 B 신규연동 시스템의 입장이였고, 평균적으로 1시간당 2만건정도씩 http traffic 을 처리하는데 한달에 30건/ 24시간마다 1번의 http</li>
+<li>참고로 이 글에서 http 리퀘스트는 모두 https 를 사용하는데 편의상 http 라고 표현하겠습니다.</li>
+<li></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+-----------+      +-----+      +---------+      +---------+      +------+      +------------+      +-----------+
+</span></span><span style="display:flex;"><span>|클라이언트 | ---&gt; | DNS | ---&gt; | 인터넷  | ---&gt; | 방화벽  | ---&gt; | LB   | ---&gt; |ForwardProxy| ---&gt; | 서버      |
+</span></span><span style="display:flex;"><span>+-----------+      +-----+      +---------+      +---------+      +------+      +------------+      +-----------+
+</span></span></code></pre></div><ul>
+<li>전체 구간은 위의 그림처럼 클라이언트, DNS, 인터넷, 방화벽, LB, 공통 FF, 서버</li>
+<li>통제 불가능 영역, 로그나 덤프를 받아볼수도 없는 영역인 인터넷 이전 영역을 포함하면 4개의 Layer가 남게 됩니다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+---------+      +------+      +------------+      +-----------+
+</span></span><span style="display:flex;"><span>| 방화벽  | ---&gt; | LB   | ---&gt; |ForwardProxy| ---&gt; | 서버      |
+</span></span><span style="display:flex;"><span>+---------+      +------+      +------------+      +-----------+
+</span></span></code></pre></div><ul>
+<li>ForwardProxy : 여기서ㅏ</li>
+<li><a href="https://camel.apache.org">Apache Camel</a></li>
+</ul>
+
+      </article>
+
+      
+
+      
+
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+      <div class="p2 wrap">
+        <div class="measure mt1 center">
+      <nav class="social-icons icons">
+<a class="fa fa-rss rss" href="/index.xml"></a>
+
+</nav>
+
+          <small>
+            Copyright &#169; 2017<br>
+            Powered by <a href="http://gohugo.io/" target="_blank">Hugo</a> &amp; <a href="https://github.com/azmelanar/hugo-theme-pixyll" target="_blank">Pixyll</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+
+</body>
+</html>
+
