@@ -53,6 +53,36 @@
                         
                             
                                 <div class="post">
+  <a class="post-link" href="https://moto6.github.io/blog/post/20240717-jenv%EB%A1%9Cjdk%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
+  <p class="post-meta left">Jul 17, 2024</p>
+  
+  <div class="clearfix"></div>
+  <h3 class="h2 post-title">20240717 Jenv로jdk여러개사용하기 </h3>
+  <p class="post-summary">jenv jenv 는 자바 버전 매니져 npm 에서 nvm 이 있다면 java 에서는 jenv 를 사용한다. 설치법은 brew install jenv 로 설치하지만 공식 가이드를 참고하는것을 추천합니다. jenv 사용법 # 인식버전확인 jenv versions # 전역으로 사용할때 jenv global {사용할_자바_특정버전} # 특정위치에서만 사용할때 jenv local {JAVA_VERSION} 인텔리제이에 설치된 jdk 긁어다 쓰는 방법 커스텀 쉘 스크립트 만들어서 인텔리제이용 jdk 를 사용해봤습니다 #!/bin/bash # JVM 설치 디렉토리 경로 java_vm_dir=&#34;${HOME}/Library/Java/JavaVirtualMachines&#34; # java_vm_dir 안에 있는 모든 디렉토리에 대해 jenv add 실행 for dir in &#34;${java_vm_dir}&#34;/*/; do java_home=&#34;${dir}/Contents/Home&#34; echo &#34;Adding ${java_home} to jenv.</p>
+  </a>
+  
+  
+</div>
+
+                            
+                        
+                            
+                                <div class="post">
+  <a class="post-link" href="https://moto6.github.io/blog/post/20240717-%EC%A0%9C%ED%94%8C%EB%A6%B0-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/">
+  <p class="post-meta left">Jul 17, 2024</p>
+  
+  <div class="clearfix"></div>
+  <h3 class="h2 post-title">20240717 제플린 테스트실행하기 </h3>
+  <p class="post-summary">제플린 테스트 실행하기 주제 이번 글에서는 apache zepplin 프로젝트의 전체 테스트 코드를 실행해보고 테스트과정에서 겪은 이슈와 해결방법에 대해 다룹니다 IDEA 에서 테스트를 실행하는것도 가능하지만, 좀더 범용적으로 사용할수 있도록 이번 글에서는 console 에서 테스트하는 방법에 대해서 다루겠습니다. 따라서 이 글의 컨텐츠들은 이클립스나 인텔리제이 같은 별도의 IDE 에는 의존적이지 않습니다. 테스트 실행 전 준비사항 테스트를 시작하기 전에 몇가지 사전작업이 필요한데요 jdk 버전 node 버전 확인 JDK 버전 확인 # 로컬 자바버전 확인 명령어 java -version 아래에서 설명하겠지만, JDK 버전은 꼭 11로 설정을 추천합니다.</p>
+  </a>
+  
+  
+</div>
+
+                            
+                        
+                            
+                                <div class="post">
   <a class="post-link" href="https://moto6.github.io/blog/post/20240629-%EC%A3%BC%EB%AC%B8-%EC%9C%A0%EC%8B%A4-%EC%9D%B4%EC%8A%88%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/">
   <p class="post-meta left">Jun 29, 2024</p>
   
@@ -68,12 +98,12 @@
                         
                             
                                 <div class="post">
-  <a class="post-link" href="https://moto6.github.io/blog/post/20231231-2023%EA%B0%9C%EB%B0%9C%ED%9A%8C%EA%B3%A0%EB%A1%9D/">
-  <p class="post-meta left">Dec 31, 2023</p>
+  <a class="post-link" href="https://moto6.github.io/blog/post/20240628-%EB%AF%B8%EC%84%B8%ED%8C%81/">
+  <p class="post-meta left">Jun 28, 2024</p>
   
   <div class="clearfix"></div>
-  <h3 class="h2 post-title">20231231 2023연말결산개발회고록 </h3>
-  <p class="post-summary">2023년을 마무리하면서 연말결산 &amp; 개발회고록 &amp; 실수 모음집 들어가기전 주의사항 2023년동안 Java/Spring 백엔드 개발 하면서 생각한것들을 주관적으로 대충 작성해봤슴다 1 CDN 서비스를 ACL 처리할때는 IP 로 하는게 아니라 Domain 기반으로 하자 2 카프카는 Pub-Sub 구조가 필요할때 쓰자 3 예쁜쓰레기 코드 죄송합니다 4 Http 는 생각보다 아주많이 느릴수도 있다 5 논문만큼 긴 쿼리는&hellip; 캡틴큐다 6 깃 커밋메시지 제대로 쓰자 7 이메일 길이 제한을 명시하자 8 HTTPS 에서 인증서 체크는 issue Date &amp;&amp; Expiration date 둘다 한다 9 버전업은 남들이 올려줄때까지 그냥 흐린눈 하자 (굳이.</p>
+  <h3 class="h2 post-title">20240628 미세팁 </h3>
+  <p class="post-summary">파이썬 환경설정 쉘에 엘리어스 등록해두기 # zshrc 혹은 bashrc 에 넣어두기 # alias venv=&#39;source ~/venv/bin/activate&#39; &lt;&lt; 무조건 User 별로 쓰고싶을때는 간단하게 이렇게 씀 # 프로젝트별 venv 가 존재하는 경우 아래 스크립트로 사용 # 스크립트 설명 : 현재 경로에 venv 읽어보고 없으면 OS-USER venv alias venv=&#39;source_venv&#39; source_venv() { local current_venv_path=&#34;$(pwd)/venv&#34; local home_venv_path=&#34;$HOME/venv&#34; if source &#34;$current_venv_path/bin/activate&#34; 2&gt;/dev/null; then echo &#34;가상 환경 &#39;${current_venv_path}&#39;이(가) 활성화되었습니다.&#34; else echo &#34;use OS USER VENV&#34; if source &#34;$home_venv_path/bin/activate&#34; 2&gt;/dev/null; then echo &#34;가상 환경 &#39;${home_venv_path}&#39;이(가) 활성화되었습니다.</p>
   </a>
   
   
@@ -83,12 +113,12 @@
                         
                             
                                 <div class="post">
-  <a class="post-link" href="https://moto6.github.io/blog/post/20231113-%EB%AA%A8%EB%8B%88%ED%84%B0-%EC%98%A4%EB%94%94%EC%98%A4%EC%B6%9C%EB%A0%A5-%EB%85%B8%EC%9D%B4%EC%A6%88-%ED%99%94%EC%9D%B4%ED%8A%B8%EB%85%B8%EC%9D%B4%EC%A6%88/">
-  <p class="post-meta left">Nov 13, 2023</p>
+  <a class="post-link" href="https://moto6.github.io/blog/post/20240608-%EC%A0%9C%ED%94%8C%EB%A6%B0%ED%86%BA%EC%95%84%EB%B3%B4%EA%B8%B0/">
+  <p class="post-meta left">Jun 7, 2024</p>
   
   <div class="clearfix"></div>
-  <h3 class="h2 post-title">20231113 모니터 오디오출력 노이즈 화이트노이즈 </h3>
-  <p class="post-summary"></p>
+  <h3 class="h2 post-title">20240606 제플린톺아보기 </h3>
+  <p class="post-summary">프로젝트 전체 톺아보기 이번 글에서는 apache zeppelin 이라는 소프트웨어에 대해서 전체적으로 톺아보는 (screening) 주제를 다뤄보도록 하겠습니다. 동작하는 소프트웨어 분석하고 Contribution 을 위해서 아래의 아이템들을 진행해본 내역을 공유해보고자 합니다. - 컨트리뷰트 가이드 읽기 - zeppelin 사용하면서 친해지기 - 위키탐방 (https://cwiki.apache.org/confluence/display/ZEPPELIN/Zeppelin+Home) - 키워드 정리 - 이슈 찾아보기 컨트리뷰트 가이드 읽기 오픈소스에는 다양한 사람들의 참여할수 있도록 contribution guide 문서를 제공해주는데 아파치 제플린에서는 https://zeppelin.apache.org/contribution/contributions.html 링크에서 해당 문서를 확인할수 있습니다. 더해서 프로젝트 내 how_to_contribute_code.md 파일 을 확인해보면 더욱 자세한 정보를 얻을 수 있습니다 핵심을 빠르게 요약해보면 아래아 같습니다 - Apache Zeppelin 은 Apache License 2.</p>
   </a>
   
   
@@ -98,12 +128,12 @@
                         
                             
                                 <div class="post">
-  <a class="post-link" href="https://moto6.github.io/blog/post/20231111-kotlin%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EC%9E%84%ED%8F%AC%ED%8A%B8%ED%91%B8%EB%8A%94%EB%B2%95/">
-  <p class="post-meta left">Nov 11, 2023</p>
+  <a class="post-link" href="https://moto6.github.io/blog/post/20240608-%EC%A0%9C%ED%94%8C%EB%A6%B0%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EC%85%8B%EC%97%85/">
+  <p class="post-meta left">Jun 7, 2024</p>
   
   <div class="clearfix"></div>
-  <h3 class="h2 post-title">20231111 Kotlin와일드카드임포트푸는법 </h3>
-  <p class="post-summary">와일드카드 임포트 (import *) 는 어쩌다 생겨나는가? JVM 계열 언어(자바, 코틀린) 을 쓰면 코드상에 의존하는 외부의 요소들은 import 로 명시를 해주게 됩니다 그래서 코딩을 하면서 import 문이 하나둘 늘어나다 보면 // 이렇게 하나씩 늘어나다가 import lotto.model.Game import lotto.model.Issuer import lotto.model.LottoWinners import lotto.model.Rank import lotto.model.Round // * 로 퉁쳐버립 import lotto.model.* 위 코드처럼 * (와일드카드 심볼) 로 임포트 된 코드들이 되게 되는데요 특별히 옵션을 변경한적 없다면 5개 이상부터는 * 로 치환하게 되는데요, 그 이유는 인텔리제이 내장 포메터의 디폴트 동작 옵션이라 그렇습니다.</p>
+  <h3 class="h2 post-title">20240606 제플린개발환경셋업 </h3>
+  <p class="post-summary">시작하기전에 제가 이 글을 작성하면서 사용한환경은 아래와 같습니다. macOS : sonoma 14.4.1 (apple sillicon) IDE : IntelliJ IDEA 2024.1 이외 git, jdk17, nvm 등의 도구를 사용 그리고 이 글은 아래의 순서로 목차는 아래의 순서로 진행했습니다. pache Zeppelin 프로젝트 Clone Node 환경세팅 (nvm 사용) JDK 환경세팅 (IntelliJ IDE 사용) Local 에서 띄우기 Apache Zeppelin 프로젝트 Clone 깃허브의 apache zeppelin 프로젝트 Repo (link : https://github.com/apache/zeppelin.git) 를 Clone 해옵니다. git clone https://github.com/apache/zeppelin.git 개인마다 fork 를떠서 자신의 fork repo 에서 clone 해 진행을 해도 가능하지만 글에서 별도로 다루지는 않겠습니다.</p>
   </a>
   
   
@@ -112,94 +142,9 @@
                             
                         
                             
-                                <div class="post">
-  <a class="post-link" href="https://moto6.github.io/blog/post/20231110-dns%EB%8A%94_ip%ED%97%88%EC%9A%A9%EB%A7%90%EA%B3%A0_%EB%8F%84%EB%A9%94%EC%9D%B8%ED%97%88%EC%9A%A9%ED%95%B4%EC%A4%98%EC%9A%94/">
-  <p class="post-meta left">Nov 10, 2023</p>
-  
-  <div class="clearfix"></div>
-  <h3 class="h2 post-title">20231110 DNS는_IP허용말고_도메인허용해줘요 </h3>
-  <p class="post-summary">DNS 주소는 도메인 단위로 허용해야하는구나! 를 배운 SSUL 발단 돈이많고 보안이 빡센 굴지의 대기업 횽이 우리 서비스를 자기네 사업장에서 돌리보고 싶어 하셨었습니다. 그래서 요구사항도 열심히 수용해서 개발두 하고, 이런저런 절차들을 통과할때쯤 문제가 생겼는데요 &ldquo;프론트가 깨져요&rdquo; 라는 이슈가 생겼어요. 왜 프론트가 깨지는지 확인을 해 보니까, 이 대기업횽네는 보안이 무지 빡세서 퍼블릭 망이긴 한데, 네트워크가 whitelist 정책이라서 허용된 IP 이외에 모든 네트웍 접근에 대해서 timeout error 를 날려주시는 차도남같은 차가운 보안정책이였던 것이였어요. 처음에 우리 서비스 연결할때도 ip 를 허용해주고 nat 대역을 어디까지 쓰고 했던터라 아 이것도 등록하면 되는구나 하고 생각을 했었답니다 트러블슈팅 그래서 크롬디버거창을 보니 외부 Saas 서비스로 가는 CDN이 막혀있었고, 동일한 외부 Saas 서비스에서 프론트에 사용되는 bootstrap, jquery CDN 이 막혀서 프론트가 깨지는 원인 이였습니다.</p>
-  </a>
-  
-  
-</div>
-
-                            
                         
                             
-                                <div class="post">
-  <a class="post-link" href="https://moto6.github.io/blog/post/20231107-%EC%BD%94%ED%8B%80%EB%A6%B0%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C3%EC%A3%BC/">
-  <p class="post-meta left">Nov 7, 2023</p>
-  
-  <div class="clearfix"></div>
-  <h3 class="h2 post-title">20231107 코틀린클린코드3주 </h3>
-  <p class="post-summary">TDD TDD 는 개발 방법론이자 철학, Development TDD 로 구현할 기능 찾기 -=&ndash;
-시작하기 퍼블릭 클래스! 요구 사항 분석을 통한 기능 목록 작성 객체 설계를 통해 어느 부분부터 구현을 시작할 것인지 결정 기능 목록 구매할 Lotto의 매수 구하기 1000 -&gt; 1 1500 -&gt; 1 500 -&gt; error 한장의 Lotto 생성 당첨 번호 생성 정상적인 당첨 번호 입력 유효하지 않은 당첨 번호 한 장의 Lotto에 대한 당첨 결과 구하기 n장의 Lotto에 대한 당첨 결과 구하기 Lotto 결과에 따른 수익률 구하기 &hellip; TDD로 구현할 기능 찾기 구현 중간 부분을 자르는 연습을 해야 한다.</p>
-  </a>
-  
-  
-</div>
-
-                            
                         
-                            
-                                <div class="post">
-  <a class="post-link" href="https://moto6.github.io/blog/post/20230907-%EC%BB%B4%EA%B5%AC%EC%8A%A4%ED%84%B0%EB%94%9471%ED%8E%98%EC%9D%B4%EC%A7%80/">
-  <p class="post-meta left">Sep 14, 2023</p>
-  
-  <div class="clearfix"></div>
-  <h3 class="h2 post-title">20230907 컴구스터디71페이지 </h3>
-  <p class="post-summary">컴구스터디 71 페이지 손글씨로 정리해봤습니다 </p>
-  </a>
-  
-  
-</div>
-
-                            
-                        
-                            
-                                <div class="post">
-  <a class="post-link" href="https://moto6.github.io/blog/post/20230904-%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%85%8C%EC%8A%A4%ED%8C%85-%EC%B1%953/">
-  <p class="post-meta left">Sep 4, 2023</p>
-  
-  <div class="clearfix"></div>
-  <h3 class="h2 post-title">20230904 이펙티브테스팅 챕3 </h3>
-  <p class="post-summary"></p>
-  </a>
-  
-  
-</div>
-
-                            
-                        
-                            
-                                <div class="post">
-  <a class="post-link" href="https://moto6.github.io/blog/post/20230830-%EA%B5%AC%EB%A6%84%ED%86%A43%EC%A3%BC%EC%B0%A8%EC%88%98%EC%9A%94%EC%9D%BC/">
-  <p class="post-meta left">Aug 30, 2023</p>
-  
-  <div class="clearfix"></div>
-  <h3 class="h2 post-title">20230830 구름톤3주차수요일 </h3>
-  <p class="post-summary">구름톤 3주차 코테풀이 수요일 발전기 문제 발전기 문제는 전형적인 BFS 문제라고 생각했는데 왜냐하면&hellip; 인접한 집은 전기가 통한다 &raquo; 인접노드를 먼저 탐색해라 &raquo; BFS 발전기의 최소한의 갯수를 구해라 &raquo; BFS 의 EntryPoint 갯수 구하기 &raquo; 삼성코테 기출 / 백준 등등의 문제들 중에서 섬의 갯수 구하기 유형 그런데 이제.. 조금 불평불만을 해보자면 글 읽기가 좀 힘든데 왜 그런고 하니 &ldquo;빈땅&rdquo; 에 발전기를 설치하는 경우 &raquo; 2^(N*N) 시간복잡도 만큼의 극한의 완전탐색 문제 &raquo; n=5 이면 2^25 만큼 시간복잡도 한계지점 &ldquo;집&rdquo; 에다가 발전기를 설치하는 경우 &raquo; 단순 BFS 위 두 문장 사이가 뭔가 미묘하게 애매한 구석이 있어서 좀더 명시적으로 이야기되면 좋을꺼같습니다.</p>
-  </a>
-  
-  
-</div>
-
-                            
-                        
-                            
-                                <div class="post">
-  <a class="post-link" href="https://moto6.github.io/blog/post/20230829-%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%85%8C%EC%8A%A4%ED%8C%852%EC%A3%BC%EC%B0%A8/">
-  <p class="post-meta left">Aug 29, 2023</p>
-  
-  <div class="clearfix"></div>
-  <h3 class="h2 post-title">20230829 이펙티브테스팅 챕터2 - 명세기반테스트 </h3>
-  <p class="post-summary">이펙티브 테스팅 챕터 2 Abstraction 요구사항 기반으로 테스트코드 만들면 아주좋음, 그게 명세기반테스트임 도메인이 강력하고 요구사항이 복잡할수록, 명세기반테스트로 검증하기 좋고 검증해야함 명세기반 테스트를 위한 7단계 접근법 버그는 경계를 좋아한다. 엣지케이스라고도 하는데, 이 엣지케이스를 찾는게 가장 중요하고 어려운 일 무엇을 테스트해야하는지 결정잘해 무엇은 테스트하면 안되는지(의미가 없는 쓸데없는 테스트인지) 결정 잘하기 인트로 소프트웨어에서 가장 중요한거 : 요구사항 충족 비지니스가 복잡하고 고도화될수록, 비지니스 요구사항을 잘 충족하는지 검사해야한다 (내생각) 도메인이 고도화될수록 &raquo; 도메인 로직 위주로 테스트하기 쉽도록 단위테스트를 만들면 아주 좋겠죠?</p>
-  </a>
-  
-  
-</div>
-
                             
                         
                     

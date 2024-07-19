@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>20240606 제플린개발환경셋업 - blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="https://moto6.github.io/blog/post/20240608-%EC%A0%9C%ED%94%8C%EB%A6%B0%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EC%85%8B%EC%97%85/">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <link rel="stylesheet" type="text/css" href="https://moto6.github.io/blog//css/combined-min.css">
+  
+
+</head>
+<body class="">
+
+<div class="site-wrap">
+  <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="https://moto6.github.io/blog/" class="site-title">blog</a>
+      <nav class="site-nav right">
+      <a href="https://moto6.github.io/blog//about/">About</a>
+<a href="https://moto6.github.io/blog//tags/">Tags</a>
+<a href="https://moto6.github.io/blog//contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</header>
+
+  <div class="post p2 p-responsive wrap" role="main">
+    <div class="measure">
+      <div class="post-header mb2">
+        <h1 class="py2">20240606 제플린개발환경셋업</h1>
+        <span class="post-meta">Jun 7, 2024 </span><br>
+        
+      </div>
+
+      <article class="post-content">
+      <h2 id="시작하기전에">시작하기전에</h2>
+<ul>
+<li>제가 이 글을 작성하면서 사용한환경은 아래와 같습니다.
+<ul>
+<li>macOS : sonoma 14.4.1 (apple sillicon)</li>
+<li>IDE : IntelliJ IDEA 2024.1</li>
+<li>이외 git, jdk17, nvm 등의 도구를 사용</li>
+</ul>
+</li>
+<li>그리고 이 글은 아래의 순서로 목차는 아래의 순서로 진행했습니다.
+<ul>
+<li>pache Zeppelin 프로젝트 Clone</li>
+<li>Node 환경세팅 (nvm 사용)</li>
+<li>JDK 환경세팅 (IntelliJ IDE 사용)</li>
+<li>Local 에서 띄우기</li>
+</ul>
+</li>
+</ul>
+<h2 id="apache-zeppelin-프로젝트-clone">Apache Zeppelin 프로젝트 Clone</h2>
+<ul>
+<li>깃허브의 apache zeppelin 프로젝트 Repo (link : <a href="https://github.com/apache/zeppelin.git">https://github.com/apache/zeppelin.git</a>) 를 Clone 해옵니다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/apache/zeppelin.git
+</span></span></code></pre></div><ul>
+<li>개인마다 fork 를떠서 자신의 fork repo 에서 clone 해 진행을 해도 가능하지만 글에서 별도로 다루지는 않겠습니다.</li>
+</ul>
+<h2 id="node-환경세팅-nvm-사용">Node 환경세팅 (nvm 사용)</h2>
+<ul>
+<li>Apache Zeppelin 의 로컬 개발환경 구축을 위해서는 node 개발환경이 필요합니다. 저는 <a href="https://github.com/nvm-sh/nvm">nvm</a> 이라는 툴을 사용해서 node 버전을 세팅해줬습니다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nvm install 16.20.2  <span style="color:#75715e"># node16 버전 설치</span>
+</span></span><span style="display:flex;"><span>nvm use <span style="color:#ae81ff">16</span>  <span style="color:#75715e"># node16 버전 사용 설정</span>
+</span></span></code></pre></div><ul>
+<li>위 명령어를 실행하고 나서 잘 설치되었는지 확인하는 명령어 입력</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>node -v <span style="color:#f92672">&amp;&amp;</span> nvm ls
+</span></span></code></pre></div><ul>
+<li>v16.20.2 버전이 설치된것을 확인하였습니다</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>v16.20.2
+</span></span><span style="display:flex;"><span>-&gt;     v16.20.2
+</span></span></code></pre></div><ul>
+<li>이 글을 작성하는 시점인 2024년 6월 기준으로는 node 버전으로 16을 사용하지만, 추후에 언제든지 변경될수 있습니다. 그래서 가끔은 package.json 파일을 확인해 프로젝트에서 사용가능한 특정 Node.js와 npm 버전을 확인해보는것이 좋습니다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>json
+</span></span><span style="display:flex;"><span>&#34;engines&#34;: {
+</span></span><span style="display:flex;"><span>  &#34;node&#34;: &#34;~16.20.2&#34;,
+</span></span><span style="display:flex;"><span>  &#34;npm&#34;: &#34;~8.19.4&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="jdk-환경세팅-intellij-ide-사용">JDK 환경세팅 (IntelliJ IDE 사용)</h2>
+<ul>
+<li>저의 환경에서는 IntelliJ IDEA 라는 IDE (이하 IDEA) 를 사용해 프로젝트를 열어봅니다. 이 글 작성시점에는 2024.1 버전을 사용중입니다.</li>
+<li>IntelliJ 를 사용하면 자동으로 플러그인들이 추천되는데, 모두 설치해줍니다. (apache flink, spark, kafka 등..)</li>
+<li>처음 열 경우 약간의 시간이 필요한데요, IDEA 에서는 파일들을 인덱싱하고 프로젝트 매니징 툴인 <a href="https://maven.apache.org/">Apache Maven</a> (이하 메이븐 / maven) 이 개발을 위해 필요한 JDK &amp; 라이브러리등을 자동으로 다운로드 받아줍니다.</li>
+</ul>
+<h2 id="local-에서-띄우기">Local 에서 띄우기</h2>
+<ul>
+<li>이제 제플린 프로젝트를 로컬에서 실행시켜보겠습니다</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>./mvnw clean package -DskipTests <span style="color:#f92672">&amp;&amp;</span> ./bin/zeppelin-daemon.sh restart
+</span></span></code></pre></div><ul>
+<li>위 한줄명령어를 터미널에 입력하고 정상적으로 실행되었을때 아래의 정보들을 확인할수 있었습니다</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>## ~~ 중략 ~~
+</span></span><span style="display:flex;"><span>[INFO] BUILD SUCCESS
+</span></span><span style="display:flex;"><span>[INFO] ------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>[INFO] Total time:  04:35 min
+</span></span><span style="display:flex;"><span>[INFO] Finished at: 2024-06-08T11:23:49+09:00
+</span></span><span style="display:flex;"><span>[INFO] ------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>Please specify HADOOP_CONF_DIR if USE_HADOOP is true
+</span></span><span style="display:flex;"><span>Zeppelin stop                                              [  OK  ]
+</span></span><span style="display:flex;"><span>Zeppelin start 
+</span></span></code></pre></div><ul>
+<li>제플린을 로컬에서 실행한 모습
+<img src="../img/20240608-zep.png" alt="제플린 로컬 실행"></li>
+<li>제플린을 웹 브라우저를 통해 확인해봤는데요, 정상적으로 로컬에서 개발환경을 구축하는데 성공했습니다! 👍👍👍👍</li>
+</ul>
+<h2 id="참고문서">참고문서</h2>
+<ul>
+<li><a href="https://macan.tistory.com/11">https://macan.tistory.com/11</a></li>
+</ul>
+
+      </article>
+
+      
+
+      
+
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+      <div class="p2 wrap">
+        <div class="measure mt1 center">
+      <nav class="social-icons icons">
+<a class="fa fa-rss rss" href="/index.xml"></a>
+
+</nav>
+
+          <small>
+            Copyright &#169; 2017<br>
+            Powered by <a href="http://gohugo.io/" target="_blank">Hugo</a> &amp; <a href="https://github.com/azmelanar/hugo-theme-pixyll" target="_blank">Pixyll</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+
+</body>
+</html>
+
