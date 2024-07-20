@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>20231110 DNS는_IP허용말고_도메인허용해줘요 | My New Hugo Site</title>
+    <title>20231110 DNS는_IP허용말고_도메인허용해줘요 | blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="DNS 주소는 도메인 단위로 허용해야하는구나! 를 배운 SSUL 발단 돈이많고 보안이 빡센 굴지의 대기업 횽이 우리 서비스를 자기네 사업장에서 돌리보고 싶어 하셨었습니다. 그래서 요구사항도 열심히 수용해서 개발두 하고, 이런저런 절차들을 통과할때쯤 문제가 생겼는데요 &ldquo;프론트가 깨져요&rdquo; 라는 이슈가 생겼어요. 왜 프론트가 깨지는지 확인을 해 보니까, 이 대기업횽네는 보안이 무지 빡세서 퍼블릭 망이긴 한데, 네트워크가 whitelist 정책이라서 허용된 IP 이외에 모든 네트웍 접근에 대해서 timeout error 를 날려주시는 차도남같은 차가운 보안정책이였던 것이였어요. 처음에 우리 서비스 연결할때도 ip 를 허용해주고 nat 대역을 어디까지 쓰고 했던터라 아 이것도 등록하면 되는구나 하고 생각을 했었답니다 트러블슈팅 그래서 크롬디버거창을 보니 외부 Saas 서비스로 가는 CDN이 막혀있었고, 동일한 외부 Saas 서비스에서 프론트에 사용되는 bootstrap, jquery CDN 이 막혀서 프론트가 깨지는 원인 이였습니다.">
     <meta name="generator" content="Hugo 0.115.3">
@@ -63,7 +63,7 @@
   <div class="flex-l justify-between items-center center">
     <a href="/blog/" class="f3 fw2 hover-white no-underline white-90 dib">
       
-        My New Hugo Site
+        blog
       
     </a>
     <div class="flex-l items-center">
@@ -183,7 +183,7 @@
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://moto6.github.io/blog/" >
-    &copy;  My New Hugo Site 2024 
+    &copy;  blog 2024 
   </a>
     <div>
 <div class="ananke-socials">

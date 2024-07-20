@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>My New Hugo Site</title>
+    <title>blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.115.3">
@@ -30,8 +30,8 @@
 
     
     
-      <link href="/blog/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
-      <link href="/blog/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="/blog/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
+      <link href="/blog/index.xml" rel="feed" type="application/rss+xml" title="blog" />
       
     
 
@@ -39,13 +39,13 @@
       <link rel="canonical" href="https://moto6.github.io/blog/">
     
 
-    <meta property="og:title" content="My New Hugo Site" />
+    <meta property="og:title" content="blog" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://moto6.github.io/blog/" />
-<meta itemprop="name" content="My New Hugo Site">
+<meta itemprop="name" content="blog">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="My New Hugo Site"/>
+<meta name="twitter:title" content="blog"/>
 <meta name="twitter:description" content=""/>
 
 	
@@ -61,7 +61,7 @@
   <div class="flex-l justify-between items-center center">
     <a href="/blog/" class="f3 fw2 hover-white no-underline white-90 dib">
       
-        My New Hugo Site
+        blog
       
     </a>
     <div class="flex-l items-center">
@@ -79,7 +79,7 @@
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          My New Hugo Site
+          blog
         </h1>
         
       </div>
@@ -124,62 +124,62 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/blog/posts/20240717-jenv%EB%A1%9Cjdk%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" class="color-inherit dim link">
+            20240717 Jenv로jdk여러개사용하기
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          jenv jenv 는 자바 버전 매니져 npm 에서 nvm 이 있다면 java 에서는 jenv 를 사용한다. 설치법은 brew install jenv 로 설치하지만 공식 가이드를 참고하는것을 추천합니다. jenv 사용법 # 인식버전확인 jenv versions # 전역으로 사용할때 jenv global {사용할_자바_특정버전} # 특정위치에서만 사용할때 jenv local {JAVA_VERSION} 인텔리제이에 설치된 jdk 긁어다 쓰는 방법 커스텀 쉘 스크립트 만들어서 인텔리제이용 jdk 를 사용해봤습니다 #!/bin/bash # JVM 설치 디렉토리 경로 java_vm_dir=&#34;${HOME}/Library/Java/JavaVirtualMachines&#34; # java_vm_dir 안에 있는 모든 디렉토리에 대해 jenv add 실행 for dir in &#34;${java_vm_dir}&#34;/*/; do java_home=&#34;${dir}/Contents/Home&#34; echo &#34;Adding ${java_home} to jenv.
+        </div>
+          <a href="/blog/posts/20240717-jenv%EB%A1%9Cjdk%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+            </div>
+          
+            <div class="relative w-100 mb4">
+              
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/blog/posts/20240717-%EC%A0%9C%ED%94%8C%EB%A6%B0-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/" class="color-inherit dim link">
+            20240717 제플린 테스트실행하기
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          제플린 테스트 실행하기 주제 이번 글에서는 apache zepplin 프로젝트의 전체 테스트 코드를 실행해보고 테스트과정에서 겪은 이슈와 해결방법에 대해 다룹니다 IDEA 에서 테스트를 실행하는것도 가능하지만, 좀더 범용적으로 사용할수 있도록 이번 글에서는 console 에서 테스트하는 방법에 대해서 다루겠습니다. 따라서 이 글의 컨텐츠들은 이클립스나 인텔리제이 같은 별도의 IDE 에는 의존적이지 않습니다. 테스트 실행 전 준비사항 테스트를 시작하기 전에 몇가지 사전작업이 필요한데요 jdk 버전 node 버전 확인 JDK 버전 확인 # 로컬 자바버전 확인 명령어 java -version 아래에서 설명하겠지만, JDK 버전은 꼭 11로 설정을 추천합니다.
+        </div>
+          <a href="/blog/posts/20240717-%EC%A0%9C%ED%94%8C%EB%A6%B0-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+            </div>
+          
+            <div class="relative w-100 mb4">
+              
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/blog/posts/20240629-%EC%A3%BC%EB%AC%B8-%EC%9C%A0%EC%8B%A4-%EC%9D%B4%EC%8A%88%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/" class="color-inherit dim link">
             20240629 HTTP 트래픽 유실 이슈해결하기
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          1 개요 혹시 택배완료 알람을 받고 설레는 마음으로 집에 도착했는데, 물건이 온데간데 없었던 경험이 있으신가요? 저는 졸업작품을 만들때 사용할 전자부품을 국제특송으로 시켰는데 내용물이 사라져 &ldquo;아 이번학기 졸업은 물건너간건가? ㅠㅠ&rdquo; 라는 생각이 들만큼 아찔했던 상황이 있었습니다. 다행이 물건은 이름이 비슷한 다른 근처 아파트단지로 배송되어서 무사히 물건도 찾고 졸업도 재때 했던 기억이 있습니다. 이렇게 배달중 내용물이 사라져서 찾지 못하는 상황을 만나게 되면 참 난감한데요. 특히 HTTP로 들어오는 트래픽이 유실되거나, 외부연동에서 트래픽이 유실되는 경우에는 서버측도 클라이언트 측도 난감한 상황이 발생합니다.
+          1 개요 HTTP로 들어오는 트래픽이 유실되거나, 외부연동에서 트래픽이 유실되는 상황에서의 해결책을 기록합니다 우리는 분명히 줬는데 VS 우리는 받은게 없는데 이 글에서는 HTTP 유실 문제의 원인을 간단히 살펴보고, 이를 해결한 경험과 제가 처했던 상황을 공유하고자 합니다. 2 문제 상황 정의 문제가 발생할 당시를 간단하게 설명하면 아래와 같습니다. +-----------------------+ +-----------------------+ | | | | | A회사 레거시 시스템 | -------&gt; | B 신규연동 시스템 | | | http | | +-----------------------+ +-----------------------+ 저는 B 신규연동 시스템의 입장이였고, 평균적으로 1시간당 2만건정도씩 http traffic 을 처리하는데 한달에 30건/ 24시간마다 1번의 http 참고로 이 글에서 http 리퀘스트는 모두 https 를 사용하는데 편의상 http 라고 표현하겠습니다.
         </div>
           <a href="/blog/posts/20240629-%EC%A3%BC%EB%AC%B8-%EC%9C%A0%EC%8B%A4-%EC%9D%B4%EC%8A%88%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-            </div>
-          
-            <div class="relative w-100 mb4">
-              
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/blog/posts/20231231-2023%EA%B0%9C%EB%B0%9C%ED%9A%8C%EA%B3%A0%EB%A1%9D/" class="color-inherit dim link">
-            20231231 2023연말결산개발회고록
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          2023년을 마무리하면서 연말결산 &amp; 개발회고록 &amp; 실수 모음집 들어가기전 주의사항 2023년동안 Java/Spring 백엔드 개발 하면서 생각한것들을 주관적으로 대충 작성해봤슴다 1 CDN 서비스를 ACL 처리할때는 IP 로 하는게 아니라 Domain 기반으로 하자 2 카프카는 Pub-Sub 구조가 필요할때 쓰자 3 예쁜쓰레기 코드 죄송합니다 4 Http 는 생각보다 아주많이 느릴수도 있다 5 논문만큼 긴 쿼리는&hellip; 캡틴큐다 6 깃 커밋메시지 제대로 쓰자 7 이메일 길이 제한을 명시하자 8 HTTPS 에서 인증서 체크는 issue Date &amp;&amp; Expiration date 둘다 한다 9 버전업은 남들이 올려줄때까지 그냥 흐린눈 하자 (굳이.
-        </div>
-          <a href="/blog/posts/20231231-2023%EA%B0%9C%EB%B0%9C%ED%9A%8C%EA%B3%A0%EB%A1%9D/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-            </div>
-          
-            <div class="relative w-100 mb4">
-              
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/blog/posts/20231113-%EB%AA%A8%EB%8B%88%ED%84%B0-%EC%98%A4%EB%94%94%EC%98%A4%EC%B6%9C%EB%A0%A5-%EB%85%B8%EC%9D%B4%EC%A6%88-%ED%99%94%EC%9D%B4%ED%8A%B8%EB%85%B8%EC%9D%B4%EC%A6%88/" class="color-inherit dim link">
-            20231113 모니터 오디오출력 노이즈 화이트노이즈
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          
-        </div>
-          <a href="/blog/posts/20231113-%EB%AA%A8%EB%8B%88%ED%84%B0-%EC%98%A4%EB%94%94%EC%98%A4%EC%B6%9C%EB%A0%A5-%EB%85%B8%EC%9D%B4%EC%A6%88-%ED%99%94%EC%9D%B4%ED%8A%B8%EB%85%B8%EC%9D%B4%EC%A6%88/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -196,6 +196,18 @@
           
           
             <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/blog/posts/20231231-2023%EA%B0%9C%EB%B0%9C%ED%9A%8C%EA%B3%A0%EB%A1%9D/" class="link black dim">
+                20231231 2023연말결산개발회고록
+              </a>
+            </h2>
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/blog/posts/20231113-%EB%AA%A8%EB%8B%88%ED%84%B0-%EC%98%A4%EB%94%94%EC%98%A4%EC%B6%9C%EB%A0%A5-%EB%85%B8%EC%9D%B4%EC%A6%88-%ED%99%94%EC%9D%B4%ED%8A%B8%EB%85%B8%EC%9D%B4%EC%A6%88/" class="link black dim">
+                20231113 모니터 오디오출력 노이즈 화이트노이즈
+              </a>
+            </h2>
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/blog/posts/20231111-kotlin%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EC%9E%84%ED%8F%AC%ED%8A%B8%ED%91%B8%EB%8A%94%EB%B2%95/" class="link black dim">
                 20231111 Kotlin와일드카드임포트푸는법
               </a>
@@ -204,18 +216,6 @@
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/blog/posts/20231110-dns%EB%8A%94_ip%ED%97%88%EC%9A%A9%EB%A7%90%EA%B3%A0_%EB%8F%84%EB%A9%94%EC%9D%B8%ED%97%88%EC%9A%A9%ED%95%B4%EC%A4%98%EC%9A%94/" class="link black dim">
                 20231110 DNS는_IP허용말고_도메인허용해줘요
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/blog/posts/20231107-%EC%BD%94%ED%8B%80%EB%A6%B0%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C3%EC%A3%BC/" class="link black dim">
-                20231107 코틀린클린코드3주
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/blog/posts/20230907-%EC%BB%B4%EA%B5%AC%EC%8A%A4%ED%84%B0%EB%94%9471%ED%8E%98%EC%9D%B4%EC%A7%80/" class="link black dim">
-                20230907 컴구스터디71페이지
               </a>
             </h2>
           
@@ -235,7 +235,7 @@
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://moto6.github.io/blog/" >
-    &copy;  My New Hugo Site 2024 
+    &copy;  blog 2024 
   </a>
     <div>
 <div class="ananke-socials">

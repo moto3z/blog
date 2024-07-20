@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Hugo Site</title>
+    <title>Posts on blog</title>
     <link>https://moto6.github.io/blog/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
+    <description>Recent content in Posts on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Jun 2024 17:13:14 +0900</lastBuildDate><atom:link href="https://moto6.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Jul 2024 17:19:08 +0900</lastBuildDate><atom:link href="https://moto6.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>20240717 Jenv로jdk여러개사용하기</title>
+      <link>https://moto6.github.io/blog/posts/20240717-jenv%EB%A1%9Cjdk%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Wed, 17 Jul 2024 17:19:08 +0900</pubDate>
+      
+      <guid>https://moto6.github.io/blog/posts/20240717-jenv%EB%A1%9Cjdk%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+      <description>jenv jenv 는 자바 버전 매니져 npm 에서 nvm 이 있다면 java 에서는 jenv 를 사용한다. 설치법은 brew install jenv 로 설치하지만 공식 가이드를 참고하는것을 추천합니다. jenv 사용법 # 인식버전확인 jenv versions # 전역으로 사용할때 jenv global {사용할_자바_특정버전} # 특정위치에서만 사용할때 jenv local {JAVA_VERSION} 인텔리제이에 설치된 jdk 긁어다 쓰는 방법 커스텀 쉘 스크립트 만들어서 인텔리제이용 jdk 를 사용해봤습니다 #!/bin/bash # JVM 설치 디렉토리 경로 java_vm_dir=&amp;#34;${HOME}/Library/Java/JavaVirtualMachines&amp;#34; # java_vm_dir 안에 있는 모든 디렉토리에 대해 jenv add 실행 for dir in &amp;#34;${java_vm_dir}&amp;#34;/*/; do java_home=&amp;#34;${dir}/Contents/Home&amp;#34; echo &amp;#34;Adding ${java_home} to jenv.</description>
+    </item>
+    
+    <item>
+      <title>20240717 제플린 테스트실행하기</title>
+      <link>https://moto6.github.io/blog/posts/20240717-%EC%A0%9C%ED%94%8C%EB%A6%B0-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Wed, 17 Jul 2024 16:20:59 +0900</pubDate>
+      
+      <guid>https://moto6.github.io/blog/posts/20240717-%EC%A0%9C%ED%94%8C%EB%A6%B0-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/</guid>
+      <description>제플린 테스트 실행하기 주제 이번 글에서는 apache zepplin 프로젝트의 전체 테스트 코드를 실행해보고 테스트과정에서 겪은 이슈와 해결방법에 대해 다룹니다 IDEA 에서 테스트를 실행하는것도 가능하지만, 좀더 범용적으로 사용할수 있도록 이번 글에서는 console 에서 테스트하는 방법에 대해서 다루겠습니다. 따라서 이 글의 컨텐츠들은 이클립스나 인텔리제이 같은 별도의 IDE 에는 의존적이지 않습니다. 테스트 실행 전 준비사항 테스트를 시작하기 전에 몇가지 사전작업이 필요한데요 jdk 버전 node 버전 확인 JDK 버전 확인 # 로컬 자바버전 확인 명령어 java -version 아래에서 설명하겠지만, JDK 버전은 꼭 11로 설정을 추천합니다.</description>
+    </item>
+    
     <item>
       <title>20240629 HTTP 트래픽 유실 이슈해결하기</title>
       <link>https://moto6.github.io/blog/posts/20240629-%EC%A3%BC%EB%AC%B8-%EC%9C%A0%EC%8B%A4-%EC%9D%B4%EC%8A%88%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/</link>
       <pubDate>Sat, 29 Jun 2024 17:13:14 +0900</pubDate>
       
       <guid>https://moto6.github.io/blog/posts/20240629-%EC%A3%BC%EB%AC%B8-%EC%9C%A0%EC%8B%A4-%EC%9D%B4%EC%8A%88%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/</guid>
-      <description>1 개요 혹시 택배완료 알람을 받고 설레는 마음으로 집에 도착했는데, 물건이 온데간데 없었던 경험이 있으신가요? 저는 졸업작품을 만들때 사용할 전자부품을 국제특송으로 시켰는데 내용물이 사라져 &amp;ldquo;아 이번학기 졸업은 물건너간건가? ㅠㅠ&amp;rdquo; 라는 생각이 들만큼 아찔했던 상황이 있었습니다. 다행이 물건은 이름이 비슷한 다른 근처 아파트단지로 배송되어서 무사히 물건도 찾고 졸업도 재때 했던 기억이 있습니다. 이렇게 배달중 내용물이 사라져서 찾지 못하는 상황을 만나게 되면 참 난감한데요. 특히 HTTP로 들어오는 트래픽이 유실되거나, 외부연동에서 트래픽이 유실되는 경우에는 서버측도 클라이언트 측도 난감한 상황이 발생합니다.</description>
+      <description>1 개요 HTTP로 들어오는 트래픽이 유실되거나, 외부연동에서 트래픽이 유실되는 상황에서의 해결책을 기록합니다 우리는 분명히 줬는데 VS 우리는 받은게 없는데 이 글에서는 HTTP 유실 문제의 원인을 간단히 살펴보고, 이를 해결한 경험과 제가 처했던 상황을 공유하고자 합니다. 2 문제 상황 정의 문제가 발생할 당시를 간단하게 설명하면 아래와 같습니다. +-----------------------+ +-----------------------+ | | | | | A회사 레거시 시스템 | -------&amp;gt; | B 신규연동 시스템 | | | http | | +-----------------------+ +-----------------------+ 저는 B 신규연동 시스템의 입장이였고, 평균적으로 1시간당 2만건정도씩 http traffic 을 처리하는데 한달에 30건/ 24시간마다 1번의 http 참고로 이 글에서 http 리퀘스트는 모두 https 를 사용하는데 편의상 http 라고 표현하겠습니다.</description>
     </item>
     
     <item>
