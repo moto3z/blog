@@ -5,6 +5,7 @@ enableSearch = true
 codeLineNumbers = true
 codeMaxLines = 15
 theme = 'ananke'
+publishDir = "docs"
 
 [author]
 name = "Kim"
