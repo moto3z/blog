@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>20231107 코틀린클린코드3주 | My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="TDD TDD 는 개발 방법론이자 철학, Development TDD 로 구현할 기능 찾기 -=&ndash;
+시작하기 퍼블릭 클래스! 요구 사항 분석을 통한 기능 목록 작성 객체 설계를 통해 어느 부분부터 구현을 시작할 것인지 결정 기능 목록 구매할 Lotto의 매수 구하기 1000 -&gt; 1 1500 -&gt; 1 500 -&gt; error 한장의 Lotto 생성 당첨 번호 생성 정상적인 당첨 번호 입력 유효하지 않은 당첨 번호 한 장의 Lotto에 대한 당첨 결과 구하기 n장의 Lotto에 대한 당첨 결과 구하기 Lotto 결과에 따른 수익률 구하기 &hellip; TDD로 구현할 기능 찾기 구현 중간 부분을 자르는 연습을 해야 한다.">
+    <meta name="generator" content="Hugo 0.115.3">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/blog/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://moto6.github.io/blog/posts/20231107-%EC%BD%94%ED%8B%80%EB%A6%B0%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C3%EC%A3%BC/">
+    
+
+    <meta property="og:title" content="20231107 코틀린클린코드3주" />
+<meta property="og:description" content="TDD TDD 는 개발 방법론이자 철학, Development TDD 로 구현할 기능 찾기 -=&ndash;
+시작하기 퍼블릭 클래스! 요구 사항 분석을 통한 기능 목록 작성 객체 설계를 통해 어느 부분부터 구현을 시작할 것인지 결정 기능 목록 구매할 Lotto의 매수 구하기 1000 -&gt; 1 1500 -&gt; 1 500 -&gt; error 한장의 Lotto 생성 당첨 번호 생성 정상적인 당첨 번호 입력 유효하지 않은 당첨 번호 한 장의 Lotto에 대한 당첨 결과 구하기 n장의 Lotto에 대한 당첨 결과 구하기 Lotto 결과에 따른 수익률 구하기 &hellip; TDD로 구현할 기능 찾기 구현 중간 부분을 자르는 연습을 해야 한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://moto6.github.io/blog/posts/20231107-%EC%BD%94%ED%8B%80%EB%A6%B0%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C3%EC%A3%BC/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-07T19:40:03+09:00" />
+<meta property="article:modified_time" content="2023-11-07T19:40:03+09:00" />
+<meta itemprop="name" content="20231107 코틀린클린코드3주">
+<meta itemprop="description" content="TDD TDD 는 개발 방법론이자 철학, Development TDD 로 구현할 기능 찾기 -=&ndash;
+시작하기 퍼블릭 클래스! 요구 사항 분석을 통한 기능 목록 작성 객체 설계를 통해 어느 부분부터 구현을 시작할 것인지 결정 기능 목록 구매할 Lotto의 매수 구하기 1000 -&gt; 1 1500 -&gt; 1 500 -&gt; error 한장의 Lotto 생성 당첨 번호 생성 정상적인 당첨 번호 입력 유효하지 않은 당첨 번호 한 장의 Lotto에 대한 당첨 결과 구하기 n장의 Lotto에 대한 당첨 결과 구하기 Lotto 결과에 따른 수익률 구하기 &hellip; TDD로 구현할 기능 찾기 구현 중간 부분을 자르는 연습을 해야 한다."><meta itemprop="datePublished" content="2023-11-07T19:40:03+09:00" />
+<meta itemprop="dateModified" content="2023-11-07T19:40:03+09:00" />
+<meta itemprop="wordCount" content="466">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="20231107 코틀린클린코드3주"/>
+<meta name="twitter:description" content="TDD TDD 는 개발 방법론이자 철학, Development TDD 로 구현할 기능 찾기 -=&ndash;
+시작하기 퍼블릭 클래스! 요구 사항 분석을 통한 기능 목록 작성 객체 설계를 통해 어느 부분부터 구현을 시작할 것인지 결정 기능 목록 구매할 Lotto의 매수 구하기 1000 -&gt; 1 1500 -&gt; 1 500 -&gt; error 한장의 Lotto 생성 당첨 번호 생성 정상적인 당첨 번호 입력 유효하지 않은 당첨 번호 한 장의 Lotto에 대한 당첨 결과 구하기 n장의 Lotto에 대한 당첨 결과 구하기 Lotto 결과에 따른 수익률 구하기 &hellip; TDD로 구현할 기능 찾기 구현 중간 부분을 자르는 연습을 해야 한다."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">20231107 코틀린클린코드3주</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-11-07T19:40:03+09:00">November 7, 2023</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="tdd">TDD</h2>
+<ul>
+<li>TDD 는 개발 방법론이자 철학, Development</li>
+</ul>
+<h2 id="tdd-로-구현할-기능-찾기">TDD 로 구현할 기능 찾기</h2>
+<p>-=&ndash;</p>
+<h2 id="시작하기">시작하기</h2>
+<ul>
+<li>퍼블릭 클래스!</li>
+<li>요구 사항 분석을 통한 기능 목록 작성</li>
+<li>객체 설계를 통해 어느 부분부터 구현을 시작할 것인지 결정</li>
+</ul>
+<h2 id="기능-목록">기능 목록</h2>
+<ul>
+<li>구매할 Lotto의 매수 구하기
+<ul>
+<li>1000 -&gt; 1</li>
+<li>1500 -&gt; 1</li>
+<li>500 -&gt; error</li>
+</ul>
+</li>
+<li>한장의 Lotto 생성</li>
+<li>당첨 번호 생성
+<ul>
+<li>정상적인 당첨 번호 입력</li>
+<li>유효하지 않은 당첨 번호</li>
+</ul>
+</li>
+<li>한 장의 Lotto에 대한 당첨 결과 구하기</li>
+<li>n장의 Lotto에 대한 당첨 결과 구하기</li>
+<li>Lotto 결과에 따른 수익률 구하기</li>
+<li>&hellip;</li>
+</ul>
+<h2 id="tdd로-구현할-기능-찾기">TDD로 구현할 기능 찾기</h2>
+<ul>
+<li>구현 중간 부분을 자르는 연습을 해야 한다.
+<ul>
+<li>로또 구매 금액을 전달하면 구매할 수 있는 로또의 장수를 반환한다.</li>
+<li>구매한 로또와 당첨 번호를 넣으면 당첨 결과를 반환한다.</li>
+<li>당첨 결과를 입력하면 당첨금 총액을 반환한다.</li>
+<li>당첨 금액과 구매 금액을 넣으면 수익률을 반환한다.</li>
+</ul>
+</li>
+<li>구현 중간 부분을 자른다는 것은 로또 구현에 필요한 메서드를 찾는 과정이다.</li>
+<li>메서드를 자르는 과정</li>
+</ul>
+<p>=============================</p>
+<p>Lotto</p>
+<p>번거로움들이 테스트를망설이게 하는 가장 큰 이유
+테스트를 위해서 프로덕션코드가 변경되는것은 좋지 않다</p>
+<ul>
+<li>그렇다고 mock, Reflection API 같은거를 쓰지말자</li>
+</ul>
+<p>프라이빗 메서드를 테스트하고싶은 욕망은, 클래스 분리의 신호를 나타내는것이다
+요구사항을 보고 기능요구사항을 분리하는게 &raquo; 클래스를 찾고 퍼블릭 메서드를 를 찾고,</p>
+<h2 id="의존관계">의존관계</h2>
+<ul>
+<li>자바에서 : import 를 하는것</li>
+<li>다른 클래스를 알고있는 범위!</li>
+<li>클래스 간의 의존 관계를 어떻게 연결 할 것인가
+<ul>
+<li>상속 : is-a 관계 , is a kind of 관계</li>
+<li>조합 : has-a 관계</li>
+</ul>
+</li>
+</ul>
+<h2 id="상속">상속</h2>
+<ul>
+<li>역사적 배경 : 펌웨어를 만들기 위해서 만들어진게 Java 인데, 그때는 용량이 작아야했다. Ram Disk 모두!
+<ul>
+<li>그래서 코드 재사용이 미덕임</li>
+<li>옜날 안드로이드는 전체 메서드 수가 제한이 있었음. 메서드의 수가 65000개 (2^@@ 개) 넘어가면 앱이 빌드가 안되었음</li>
+<li>코드 재사용을 위한 강력한 수단이 상속임!</li>
+</ul>
+</li>
+<li>문제
+<ul>
+<li>상위 클래스의 잘못된 코드 한줄이, 건드리지도 않은 하위 클래스의 에러를 유발 할 수 있다</li>
+</ul>
+</li>
+</ul>
+<h2 id="리스코프-치환-원칙-위반">리스코프 치환 원칙 위반</h2>
+<ul>
+<li>한방설명 : 이렇게 작동할줄 알았는데, 이렇게 작동하지 않고 다르게 작동하네?</li>
+<li>객체가 어떤 상황에 협력하냐에 따라 다르다</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">open</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TextFile</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">length</span>(): Int {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> content().size
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">open</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">content</span>(): ByteArray {
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 문서의 내용을// 바이트 배열로 로드한다
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EncryptedTextFile</span>:TextFile() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">content</span>(): ByteArray {
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 문서를 로드해서,// 즉시 복호화하고,// 복호화한 내용을 반환한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//문제는 : length() &gt;&gt; 평문의 사이즈를 받길 원했는데, 암호문의 사이즈를 받는 LSP 위배가 발생함
+</span></span></span></code></pre></div><h2 id="lsp-위배-코드">LSP 위배 코드</h2>
+<ul>
+<li>addAll 이 6이 나오는 이슈 &raquo; 3이 나오는 상황</li>
+</ul>
+<h2 id="올바른-상속이란">올바른 상속이란</h2>
+<ul>
+<li>abstract class 만 있는것</li>
+<li>정제하는것만이 유일한 상송</li>
+</ul>
+<h2 id="자바코틀린의-생성자">자바/코틀린의 생성자</h2>
+<ul>
+<li>JVM 생성자의 한계 : 일단 생성자가 호출되면 새로운 힙 영역이 할당되는것을 막을 수 없음 &raquo; 동등성은 통과, 동일성은 아님</li>
+<li>kotest : shouldBeSameInstanceAs 키워드로 검증 할 수 있음</li>
+<li>(정적)팩토리메서드 사용시 &raquo; 동등성을 챙길수 있고, 새로운 초기화를 하지 않음. 그래서 동일성도 챙김</li>
+</ul>
+<p>========</p>
+<p>&lt;잘 못들음&gt;</p>
+<p>=========</p>
+<h2 id="dsl--도메인-특화-언어">DSL : 도메인 특화 언어</h2>
+<ul>
+<li>범용 프로그래밍 언어(java, python) 와는 다름</li>
+<li>DSL
+<ul>
+<li>세부 실행은 언어를 해석하는 엔진에 맡긴다.</li>
+<li></li>
+</ul>
+</li>
+<li>코틀린DSL
+<ul>
+<li>DSL 단점을 보완하기 위한 DSL</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="dsl--학습-테스트코드">DSL  학습 테스트코드</h2>
+<pre tabindex="0"><code>@Test
+fun lastChar() {
+    val actual = lastChar(&#34;Kotlin&#34;)
+
+}
+
+// 일반 함수
+fun lastChar(s:String) : Char = s.get(s.length-1)
+// 확장 함수
+fun String.lastChar() : Char = this.get(this.length -1 )
+</code></pre><ul>
+<li>확장함수개념!</li>
+</ul>
+<h2 id="연산자-오버로딩">연산자 오버로딩</h2>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://moto6.github.io/blog/" >
+    &copy;  My New Hugo Site 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

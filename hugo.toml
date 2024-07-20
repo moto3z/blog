@@ -1,6 +1,6 @@
 baseURL = 'https://moto6.github.io/blog'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'blog'
 enableSearch = true
 codeLineNumbers = true
 codeMaxLines = 15
