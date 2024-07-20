@@ -1,0 +1,10 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+enableSearch = true
+codeLineNumbers = true
+codeMaxLines = 15
+theme = 'ananke'
+
+[author]
+name = "Kim"
