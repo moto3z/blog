@@ -4,7 +4,7 @@ title = 'blog'
 enableSearch = true
 codeLineNumbers = true
 codeMaxLines = 15
-theme = 'ananke'
+theme = 'PaperMod'
 publishDir = "docs"
 
 [author]
